@@ -20,8 +20,8 @@ public class FrequencyFinderController {
             return;
         }
         FrequencyFinder frequencyFinder = new FrequencyFinder(frequencySearchableFilesInDirectory);
-        frequencySearchableFilesInDirectory.clone();
-
+        frequencyFinder.findAllFrequencies();
+        frequencyFinder.printAllWordFrequencies();
     }
     private DirectoryChooser createDirectoryChooser() {
         DirectoryChooser dc = new DirectoryChooser();
