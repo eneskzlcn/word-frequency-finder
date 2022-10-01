@@ -1,17 +1,17 @@
-package com.eneskzlcn.frequencyfinder;
+package com.eneskzlcn.frequencyfinder.word_frequency;
 
-import com.eneskzlcn.frequencyfinder.word_frequency.Tree;
-import org.junit.Test;
+import com.eneskzlcn.frequencyfinder.StringUtil;
+import com.eneskzlcn.frequencyfinder.word_frequency.FrequencyTree;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class FrequencyFinder {
     private File[] frequencySearchableFiles;
-    private Tree<String> wordFrequencyTree;
+    private FrequencyTree<String> wordFrequencyTree;
     public FrequencyFinder(File[] frequencySearchableFiles) {
         this.frequencySearchableFiles = frequencySearchableFiles;
-        this.wordFrequencyTree = new Tree<String>();
+        this.wordFrequencyTree = new FrequencyTree<String>();
     }
     public void searchAllFrequencies() {
         for(File file: this.frequencySearchableFiles) {

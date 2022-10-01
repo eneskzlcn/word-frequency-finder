@@ -1,5 +1,6 @@
 package com.eneskzlcn.frequencyfinder;
 
+import com.eneskzlcn.frequencyfinder.word_frequency.FrequencyFinder;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.DirectoryChooser;
