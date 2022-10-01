@@ -11,9 +11,6 @@ public class FileFrequency {
 
     @Override
     public String toString() {
-        return "FileFrequency{" +
-                "fileName='" + fileName + '\'' +
-                ", frequency=" + frequency +
-                '}';
+        return this.frequency + " times in "+ this.fileName;
     }
 }
