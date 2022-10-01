@@ -1,7 +1,9 @@
 package com.eneskzlcn.frequencyfinder.word_frequency;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class WordFrequencyMapper {
@@ -18,6 +20,13 @@ public class WordFrequencyMapper {
         }
         this.wordFrequencyMap.get(wordFrequency.word).
                 addFileFrequency(new FileFrequency(wordFrequency.fileName, 1));
+    }
+    public List<FileFrequency> getFileFrequencyListOfGivenWord(String word) {
+        if (!this.wordFrequencyMap.containsKey(word)) {
+            return null;
+        }
+        List<FileFrequency> fileFrequencyList = this.wordFrequencyMap.get(word).getFileFrequencyList();
+        return fileFrequencyList;
     }
     public void print() {
         System.out.printf("---All Word Frequencies---\n");

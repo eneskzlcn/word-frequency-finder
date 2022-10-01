@@ -4,6 +4,7 @@ import com.eneskzlcn.frequencyfinder.StringUtil;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
 public class FrequencyFinder {
     private File[] frequencySearchableFiles;
@@ -21,14 +22,14 @@ public class FrequencyFinder {
         try {
             Scanner scan = new Scanner(file);
             while (scan.hasNext()) {
-                WordFrequency wordFrequency = new WordFrequency(scan.next(),file.getAbsolutePath());
+                WordFrequency wordFrequency = new WordFrequency(scan.next(),file.getName());
                 this.wordFrequencyMapper.addWordFrequency(wordFrequency);
             }
         }catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
     }
-    public void printAllWordFrequencies() {
-        this.wordFrequencyMapper.print();
+    public List<FileFrequency> findFrequenciesOfGivenWord(String word) {
+        return this.wordFrequencyMapper.getFileFrequencyListOfGivenWord(word);
     }
 }

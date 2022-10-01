@@ -5,14 +5,22 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.eneskzlcn.frequencyfinder.FrequencyFinderController">
+<VBox alignment="CENTER" spacing="40.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.2-ea" fx:controller="com.eneskzlcn.frequencyfinder.FrequencyFinderController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
+<!--    <Label fx:id="errorLabel" style="&#45;&#45;fxbackground-color: red" alignment="TOP_CENTER">Hey</Label>-->
+    <HBox alignment="TOP_CENTER" spacing="20.0">
+        <TextField fx:id="searchTextField" alignment="BASELINE_LEFT" disable="true"></TextField>
+        <Button fx:id="searchButton" alignment="BASELINE_RIGHT" disable="true" onAction="#onSearchButtonClick">Search</Button>
+    </HBox>
+    <VBox>
+        <Label>Search Results</Label>
+        <TextArea fx:id="searchResultsTextArea" editable="false"> </TextArea>
+    </VBox>
 
-    <Label fx:id="directoryName" />
-    <Button id="chooseFileButton" onAction="#onChooseFileButtonClick" text="Choose File...">
-      <font>
-         <Font size="12.0" />
-      </font></Button>
+    <Button id="chooseFileButton" onAction="#onChooseFileButtonClick" text="Choose Directory To Search Word In">
+        <font>
+            <Font size="12.0" />
+        </font></Button>
 </VBox>
